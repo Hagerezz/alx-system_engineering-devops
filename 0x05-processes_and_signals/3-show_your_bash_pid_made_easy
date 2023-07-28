@@ -1,10 +1,10 @@
 #!/usr/bin/env bash
 # this script display the PID
 
-for pid in /proc/[0-9]*/cmdline;
+pids=$(pgrep -f bash)
+for pid in $pids;
 do
-    if grep -q bash "$pid"; then
-        echo "$(basename "$(dirname "$pid")") $(tr '\0' ' ' < "$pid")"
-    fi
+    process_name=$(ps -p $pid -o comm=)
+    echo "PID: $pid, Process Name: $process_name"
 done
 
