@@ -1,4 +1,5 @@
 #!/usr/bin/env bash
-# do something
+# this script display a list
 
 ps axjf
+
