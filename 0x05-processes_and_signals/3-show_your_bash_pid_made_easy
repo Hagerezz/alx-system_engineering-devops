@@ -1,0 +1,10 @@
+#!/usr/bin/env bash
+# this script display the PID
+
+for pid in /proc/[0-9]*/cmdline;
+do
+    if grep -q bash "$pid"; then
+        echo "$(basename "$(dirname "$pid")") $(tr '\0' ' ' < "$pid")"
+    fi
+done
+
