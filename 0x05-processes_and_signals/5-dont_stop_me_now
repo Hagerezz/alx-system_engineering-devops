@@ -1,7 +1,11 @@
 #!/usr/bin/env bash
 # this script display to infinity and beyond
 
-PID=$!
-sleep 2
-kill $PID
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -z "$pid" ]; then
+    echo "4-to_infinity_and_beyond process is not running"
+else
+    kill "$pid"
+    echo "4-to_infinity_and_beyond process has been terminated"
+fi
 
