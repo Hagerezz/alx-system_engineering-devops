@@ -1,12 +1,11 @@
 #!/usr/bin/env bash
 # this script display to infinity and beyond
 
-count=1
-while [ $count -le 14 ]; do
-  echo "To infinity and beyond"
-  sleep 2
-  count=$((count+1))
-done
-
-echo "Terminated"
+pid=$(pgrep -f "4-to_infinity_and_beyond")
+if [ -z "$pid" ]; then
+    echo "To infinity and beyond"
+else
+    kill "$pid"
+    echo "Terminated"
+fi
 
