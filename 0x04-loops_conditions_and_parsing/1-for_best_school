@@ -1,6 +1,7 @@
 #!/usr/bin/env bash
 #this print Best School 10 times
-
+i=1
+export i
 for i in {1..10}
 do
 	echo "Best School"
