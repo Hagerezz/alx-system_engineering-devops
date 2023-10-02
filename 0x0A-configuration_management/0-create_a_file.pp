@@ -1,3 +1,4 @@
+#file about Puppet
 file { '/tmp/school':
   ensure  => 'file',
   mode    => '0744',
