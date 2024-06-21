@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Function to print hot posts on a given Reddit subreddit."""
+"""queries the Reddit API and prints the titles of the first 10 hot posts"""
 import requests
 
 
